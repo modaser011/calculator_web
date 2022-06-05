@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Calc</title>
+        </head>
+        <style>
+            
+            .father div{
+                text-align: center;
+            }
+.father
+{
+    padding: 20px;
+    height: 500px;
+width:400px;
+margin: 10%40%;
+border: 2px;
+background-color: black;
+}
+.first div,.second div,.third div,.forth div
+{
+size:50px;
+display:inline-block;
+text-align: center;
+}
+.first div input,.second div input,.third div input,.forth div input
+{
+background-color: rgb(206, 191, 191);
+font-size: larger;
+border-radius: 5px;
+margin: 10px;
+padding: 16px;
+width: 70px;
+}
+.fifth div input
+{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 60px;
+    width:88%;
+    font-size: 30px;
+}
+._form input
+{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 60px;
+    width:98%;
+    pointer-events: none;
+}
+
+        </style>
+    <body>
+<div class ="father">
+    <form class ="_form" name="_form">
+        <input type="text" name ="_1stform" class="_1stform" > 
+    </form>
+        <div class ="first">
+<div> <input type ="button" value="1"onclick="ins(1);"></div>
+<div><input type ="button" value="2"onclick="ins(2);"> </div>
+<div><input type ="button" value="3"onclick="ins(3);"> </div>
+<div><input type ="button" value="+" onclick="ins('+');"></div>
+        </div>
+        <div class ="second ">
+ <div> <input type ="button" value="4"onclick ="ins(4);"> </div>
+ <div><input type ="button" value="5"onclick ="ins(5);"> </div>
+ <div><input type ="button" value="6"onclick ="ins(6);"> </div>
+ <div><input type ="button" value="-" onclick ="ins('-');"></div>
+    </div>
+   <div  class ="third">
+   <div> <input type ="button" value="7"onclick ="ins(7);"> </div>
+   <div><input type ="button" value="8" onclick ="ins(8);"> </div>
+   <div><input type ="button" value="9" onclick ="ins(9);"> </div>
+   <div><input type ="button" value="*" onclick ="ins('*');"> </div>
+ </div>
+ <div class ="forth">
+    <div> <input type ="button" value="/" onclick ="ins('/');"> </div>
+   <div><input type ="button" value="0" onclick ="ins(0);"> </div>
+   <div><input type ="button" value="." onclick ="ins('.');"> </div>
+   <div><input type ="button" value="=" onclick ="isEqual();"> </div>
+  </div>
+  <div class ="fifth">
+    <div> <input type ="button" value="Clear All" onclick="CLEAR();"></div>
+  </div>
+    </div>
+    <script>
+        function ins (numb)
+        {
+            var str=document._form._1stform.value;
+            var lst=str[str.length-1];
+            if(str.length<35)
+            {
+                if(!isNaN(lst)||lst==null||!isNaN(numb))
+                {
+                    document._form._1stform.value=str+numb;
+                }
+                else if (lst!=numb)
+                {
+                   
+                    document._form._1stform.value=str.replace(lst,numb);
+                }
+            }
+
+        }
+        function isEqual()
+        {
+            var sumution=document._form._1stform.value;
+            if(sumution)
+            {
+                document._form._1stform.value=eval(sumution);
+            }
+        }
+            function CLEAR()
+            {
+                document._form._1stform.value=' ';
+            }
+        </script>
+        </body>
+       
+</html>
